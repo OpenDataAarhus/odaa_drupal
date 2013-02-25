@@ -1,7 +1,7 @@
 <?php
 /**
- * @file 
- * 
+ * @file
+ *
  */
 
 
@@ -18,29 +18,29 @@ function remote_login_permission() {
 }
 
 /**
- * Implements hook_menu(). 
- * 
+ * Implements hook_menu().
+ *
  * Assumes that pay-load is in post to the user create and login callbacks.
  */
 function remote_login_menu() {
   $items = array();
-  
+
   $items['admin/config/people/remote_login'] = array(
     'title' => 'Remote Login',
     'description' => 'Administre remote login',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('remote_login_admin'),
     'access arguments' => array('administre remote login'),
-    'type' => MENU_NORMAL_ITEM,    
+    'type' => MENU_NORMAL_ITEM,
     'file' => 'remote_login.admin.inc',
   );
-  
+
   $items['remote_login/create/%'] = array(
     'title' => 'Create user',
     'description' => 'Create new user from remote host.',
     'page callback' => 'remote_login_create_user',
     'access callback' => 'remote_login_access',
-    'access arguments' => array(2),  
+    'access arguments' => array(2),
     'type' => MENU_CALLBACK,
   );
 
@@ -48,44 +48,122 @@ function remote_login_menu() {
     'title' => 'Login user',
     'description' => 'Create new user from remote host.',
     'page callback' => 'remote_login_login_user',
-    'page arguments' => array(2),  
+    'page arguments' => array(2),
     'access callback' => TRUE,
     'type' => MENU_CALLBACK,
   );
 
-  
+
   return $items;
 }
 
+/**
+ * Access callback used when creating new users.
+ *
+ * @param type $token
+ * @return boolean
+ */
 function remote_login_access($token) {
   $settings = variable_get('remote_login', FALSE);
   if ($settings) {
-    if (_remote_login_token($settings['uid'], $settings['api_key']) === $token) {
-      return TRUE;
+    $ips = explode(',', $settings['ips']);
+    if (in_array(ip_address(), $ips)) {
+      if (_remote_login_token($settings['uid'], $settings['api_key']) === $token) {
+        return TRUE;
+      }
     }
-  }  
+  }
   return FALSE;
 }
 
-
+/**
+ * Log in user based on token given.
+ *
+ */
 function remote_login_login_user($token) {
+  // Get settings.
   $settings = variable_get('remote_login', FALSE);
   if ($settings) {
+    // Build password based on administrator token.
     $pass = _remote_login_token($settings['uid'], $settings['api_key']);
+
+    // Test if user can be logged in.
     if ($uid = user_authenticate($token, $pass)) {
       global $user;
       $user = user_load($uid);
 
       $login_array = array ('name' => $token);
       user_login_finalize($login_array);
-      
+
+      // Goto ?destination=page given else front page.
       drupal_goto();
     }
   }
-  
+
+  // Login failed.
   drupal_access_denied();
 }
 
+/**
+ * Create user based on posted variables. Access have been checked in the menu
+ * callback. This function should only be used on the server between ckan and
+ * drupal.
+ *
+ * Posted values:
+ *    uid - Ckan user identifier.
+ *    api_key - Ckan user API-key.
+ *    fullname - Ckan user name/full name.
+ *    mail - Ckan user e-mail address.
+ *
+ */
+function remote_login_create_user() {
+  $settings = variable_get('remote_login', FALSE);
+  if ($settings) {
+    // Build password based on administrator token.
+    $password = _remote_login_token($settings['uid'], $settings['api_key']);
+
+    // Get posted data.
+    $username = _remote_login_token($_POST['uid'], $_POST['api_key']);
+    $full_name = check_plain($_POST['fullname']);
+    $mail = $_POST['mail'];
+
+    // Build user.
+    $new_user = array(
+      'name' => $username,
+      'pass' => $password,
+      'mail' => $mail,
+      'status' => 1,
+      'init' => 'email address',
+      'field_full_name' => array(
+        'und' => array(
+          array(
+            'value' => $full_name,
+          ),
+        ),
+      ),
+      'roles' => array(
+        DRUPAL_AUTHENTICATED_RID => 'authenticated user',
+      ),
+    );
+
+    // Save user.
+    user_save(NULL, $new_user);
+
+    return TRUE;
+  }
+
+  // Settings was not found.
+  drupal_access_denied();
+}
+
+
+/**
+ * Generate login token.
+ *
+ * @param type $uid
+ * @param type $api_key
+ * @return type
+ */
 function _remote_login_token($uid, $api_key) {
   return sha1($uid . $api_key);
 }
