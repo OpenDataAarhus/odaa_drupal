@@ -1,0 +1,91 @@
+<?php
+/**
+ * @file 
+ * 
+ */
+
+
+/**
+ * Implements hook_permission().
+ */
+function remote_login_permission() {
+  return array(
+    'administre remote login' => array(
+      'title' => t('Administrate remote login'),
+      'description' => t('Access administration interface for this module.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu(). 
+ * 
+ * Assumes that pay-load is in post to the user create and login callbacks.
+ */
+function remote_login_menu() {
+  $items = array();
+  
+  $items['admin/config/people/remote_login'] = array(
+    'title' => 'Remote Login',
+    'description' => 'Administre remote login',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('remote_login_admin'),
+    'access arguments' => array('administre remote login'),
+    'type' => MENU_NORMAL_ITEM,    
+    'file' => 'remote_login.admin.inc',
+  );
+  
+  $items['remote_login/create/%'] = array(
+    'title' => 'Create user',
+    'description' => 'Create new user from remote host.',
+    'page callback' => 'remote_login_create_user',
+    'access callback' => 'remote_login_access',
+    'access arguments' => array(2),  
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['remote_login/login/%'] = array(
+    'title' => 'Login user',
+    'description' => 'Create new user from remote host.',
+    'page callback' => 'remote_login_login_user',
+    'page arguments' => array(2),  
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+
+  
+  return $items;
+}
+
+function remote_login_access($token) {
+  $settings = variable_get('remote_login', FALSE);
+  if ($settings) {
+    if (_remote_login_token($settings['uid'], $settings['api_key']) === $token) {
+      return TRUE;
+    }
+  }  
+  return FALSE;
+}
+
+
+function remote_login_login_user($token) {
+  $settings = variable_get('remote_login', FALSE);
+  if ($settings) {
+    $pass = _remote_login_token($settings['uid'], $settings['api_key']);
+    if ($uid = user_authenticate($token, $pass)) {
+      global $user;
+      $user = user_load($uid);
+
+      $login_array = array ('name' => $token);
+      user_login_finalize($login_array);
+      
+      drupal_goto();
+    }
+  }
+  
+  drupal_access_denied();
+}
+
+function _remote_login_token($uid, $api_key) {
+  return sha1($uid . $api_key);
+}

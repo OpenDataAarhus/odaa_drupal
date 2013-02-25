@@ -1,0 +1,3 @@
+name = "Remote Login"
+description = "Allow remote login from trusted source"
+core = 7.x
