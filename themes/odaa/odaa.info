@@ -1,0 +1,13 @@
+name = ODAA
+description = A theme simulating CKAN
+package = ODAA
+version = 7.x.0.1
+core = 7.x
+
+stylesheets[all][] = less/css/main.css
+stylesheets[all][] = /css/custom.css
+
+regions[header] = Header
+regions[sidebar] = Sidebar first
+regions[content] = Content
+regions[footer] = Footer
