@@ -18,6 +18,6 @@
  * @see template_preprocess_menu_block_wrapper()
  */
 ?>
-<div class="<?php print $classes; ?>">
+<nav class="footer-links row-fluid">
   <?php print render($content); ?>
-</div>
+</nav>
