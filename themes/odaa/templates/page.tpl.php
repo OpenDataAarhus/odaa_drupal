@@ -115,5 +115,5 @@
 </div>
 
 <footer class="site-footer">
-  <?php print render($page['footer']); ?>
+  <div class="container"><?php print render($page['footer']); ?></div>
 </footer>
