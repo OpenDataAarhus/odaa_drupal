@@ -135,7 +135,9 @@
   <div class="container">
     <?php print render($page['footer']); ?>
     <div class="attribution">
-      <p><strong>Powered by</strong> <a href="http://ckan.org" class="hide-text ckan-footer-logo">CKAN</a></p>
+      <p><strong>Powered by</strong></p>
+      <a href="http://ckan.org" class="hide-text ckan-footer-logo">CKAN</a>
+      <a href="http://drupal.org" class="hide-text drupal-footer-logo">Drupal</a>
     </div>
   </div>
 </footer>
