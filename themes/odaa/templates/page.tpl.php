@@ -130,5 +130,10 @@
 </div>
 
 <footer class="site-footer">
-  <div class="container"><?php print render($page['footer']); ?></div>
+  <div class="container">
+    <?php print render($page['footer']); ?>
+    <div class="attribution">
+      <p><strong>Powered by</strong> <a href="http://ckan.org" class="hide-text ckan-footer-logo">CKAN</a></p>
+    </div>
+  </div>
 </footer>
