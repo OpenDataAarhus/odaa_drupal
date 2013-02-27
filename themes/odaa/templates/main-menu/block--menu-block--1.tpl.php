@@ -44,8 +44,6 @@
  * @ingroup themeable
  */
 ?>
-<div class="content"<?php print $content_attributes; ?>>
-  <div class="section navigation">
-    <?php print $content ?>
-  </div>
+<div class="section navigation">
+  <?php print $content ?>
 </div>

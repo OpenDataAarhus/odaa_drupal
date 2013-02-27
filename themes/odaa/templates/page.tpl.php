@@ -78,7 +78,22 @@
         </a>
       </hgroup>
     <?php endif; ?>
-    <?php print render($page['header']); ?>
+    <div class="content">
+      <?php print render($page['header']); ?>
+      <form method="get" action="/dataset" class="section site-search simple-input">
+        <div class="field">
+          <label for="field-sitewide-search">Search Datasets</label>
+          <input placeholder="Search" name="q" id="field-sitewide-search">
+          <button type="submit" class="btn-search">Search</button>
+        </div>
+      </form>
+      <nav class="section account not-authed">
+        <ul class="unstyled">
+          <li><a href="/user/login">Log in</a></li>
+          <li><a href="/user/register" class="sub">Register</a></li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </header>
 
