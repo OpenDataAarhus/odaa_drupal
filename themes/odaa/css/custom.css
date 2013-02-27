@@ -43,10 +43,9 @@ h1,h2,h3,h4,h5,h6 {
 header #site-name {
   font-family: 'ChivoRegular', Helvetica, Arial, sans-serif;
 }
+
 header #logo {
   float: left;
-  margin-top:10px;
-  margin-bottom:10px;
 }
 header .menu {
   float: left;
