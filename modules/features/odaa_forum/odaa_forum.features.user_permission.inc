@@ -60,7 +60,9 @@ function odaa_forum_user_default_permissions() {
   // Exported permission: create forum content.
   $permissions['create forum content'] = array(
     'name' => 'create forum content',
-    'roles' => array(),
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'node',
   );
 
@@ -69,6 +71,7 @@ function odaa_forum_user_default_permissions() {
     'name' => 'create subscriptions',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'notifications',
   );
@@ -76,14 +79,18 @@ function odaa_forum_user_default_permissions() {
   // Exported permission: delete any forum content.
   $permissions['delete any forum content'] = array(
     'name' => 'delete any forum content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: delete own forum content.
   $permissions['delete own forum content'] = array(
     'name' => 'delete own forum content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
@@ -97,7 +104,9 @@ function odaa_forum_user_default_permissions() {
   // Exported permission: edit any forum content.
   $permissions['edit any forum content'] = array(
     'name' => 'edit any forum content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
@@ -113,7 +122,9 @@ function odaa_forum_user_default_permissions() {
   // Exported permission: edit own forum content.
   $permissions['edit own forum content'] = array(
     'name' => 'edit own forum content',
-    'roles' => array(),
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'node',
   );
 
@@ -129,6 +140,7 @@ function odaa_forum_user_default_permissions() {
     'name' => 'maintain own subscriptions',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'notifications',
   );
@@ -167,6 +179,7 @@ function odaa_forum_user_default_permissions() {
     'name' => 'skip notifications',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'notifications',
   );

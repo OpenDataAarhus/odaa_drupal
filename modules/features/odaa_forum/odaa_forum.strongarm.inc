@@ -155,6 +155,111 @@ function odaa_forum_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'notifications_content_per_type';
+  $strongarm->value = '0';
+  $export['notifications_content_per_type'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'notifications_content_type';
+  $strongarm->value = array(
+    'forum' => 'forum',
+    'article' => 0,
+    'page' => 0,
+  );
+  $export['notifications_content_type'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'notifications_option_subscribe_links';
+  $strongarm->value = '0';
+  $export['notifications_option_subscribe_links'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'notifications_option_subscription_types_content_thread';
+  $strongarm->value = array(
+    'subscriptions_block' => 1,
+    'node_links' => 1,
+    'teaser_links' => 1,
+    'enabled' => 1,
+  );
+  $export['notifications_option_subscription_types_content_thread'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'notifications_option_subscription_types_content_type';
+  $strongarm->value = array(
+    'subscriptions_block' => 0,
+    'node_links' => 0,
+    'teaser_links' => 0,
+    'enabled' => 0,
+  );
+  $export['notifications_option_subscription_types_content_type'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'notifications_option_subscription_types_content_type_term';
+  $strongarm->value = array(
+    'subscriptions_block' => 0,
+    'enabled' => 0,
+  );
+  $export['notifications_option_subscription_types_content_type_term'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'notifications_option_subscription_types_taxonomy_term';
+  $strongarm->value = array(
+    'subscriptions_block' => 1,
+    'enabled' => 1,
+  );
+  $export['notifications_option_subscription_types_taxonomy_term'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'notifications_option_subscription_types_taxonomy_term_multiple';
+  $strongarm->value = array(
+    'subscriptions_block' => 0,
+    'enabled' => 0,
+  );
+  $export['notifications_option_subscription_types_taxonomy_term_multiple'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'notifications_option_subscription_types_taxonomy_vocabulary';
+  $strongarm->value = array(
+    'subscriptions_block' => 0,
+    'enabled' => 0,
+  );
+  $export['notifications_option_subscription_types_taxonomy_vocabulary'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'notifications_option_unsubscribe_links';
+  $strongarm->value = '0';
+  $export['notifications_option_unsubscribe_links'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'notifications_tags_vocabularies';
+  $strongarm->value = array(
+    2 => '2',
+  );
+  $export['notifications_tags_vocabularies'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'user_pictures';
   $strongarm->value = 1;
   $export['user_pictures'] = $strongarm;
