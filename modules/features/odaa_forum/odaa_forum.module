@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the ODAA Forum feature.
+ */
+
+include_once 'odaa_forum.features.inc';
