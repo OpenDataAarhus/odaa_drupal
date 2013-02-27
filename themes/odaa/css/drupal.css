@@ -10,7 +10,10 @@
   ** Forum
   ------------------------------------------------------------------------------
 */
-.block-forum .module-content {
+.block-forum .module-content,
+.block-forum .module-content:last-child,
+.block-comment .module-content,
+.block-comment .module-content:last-child {
   padding: 0;
 }
 
@@ -25,7 +28,41 @@
 }
 
 .block-forum .module-content .more-link {
-  margin-right: 10px;
+  border-top: 1px solid #d0d0d0;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+
+/*
+  ------------------------------------------------------------------------------
+  ** Tabs
+  ------------------------------------------------------------------------------
+*/
+.tabs.primary {
+  float: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 0;
+  width: auto;
+}
+
+.tabs.primary li {
+  background-color: #f3f3f3;
+  border: 1px solid #ccc;
+  list-style: none;
+  display: inline-block;
+  padding: 10px 15px;
+}
+
+.tabs.primary li:hover {
+  background-color: #e2e2e2;
+}
+
+.tabs.primary li.active {
+  background-color: #e2e2e2;
+  border: 1px solid #ccc;
 }
 
 
