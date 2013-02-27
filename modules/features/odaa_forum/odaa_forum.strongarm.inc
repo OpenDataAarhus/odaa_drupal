@@ -155,6 +155,22 @@ function odaa_forum_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'messaging_default_method';
+  $strongarm->value = 'mail';
+  $export['messaging_default_method'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'messaging_method_enabled';
+  $strongarm->value = array(
+    'mail' => 'mail',
+  );
+  $export['messaging_method_enabled'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'notifications_content_per_type';
   $strongarm->value = '0';
   $export['notifications_content_per_type'] = $strongarm;
