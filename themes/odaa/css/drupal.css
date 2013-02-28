@@ -17,7 +17,7 @@
   padding: 0;
 }
 
-.page-forum .item-list  ul,
+.page-forum .item-list ul,
 .node-type-forum .item-list ul{
   margin-bottom: 0;
 }
@@ -37,6 +37,40 @@
   text-align: right;
 }
 
+#forum .forum-table-superheader {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+#forum .forum-table-name {
+  margin: 0;
+}
+
+#forum th {
+  border-bottom: 0;
+}
+
+#forum td {
+  padding: 10px;
+}
+
+#forum th.forum-icon {
+  width: 48px;
+}
+
+#forum-statistics div {
+  padding: 0;
+}
+
+#forum-statistics #forum-statistics-header {
+  font-weight: bold;
+}
+
+#forum-statistics #forum-statistics-statistics-header {
+  font-weight: bold;
+  margin-top: 20px;
+}
 
 /*
   ------------------------------------------------------------------------------
