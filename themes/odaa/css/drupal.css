@@ -17,11 +17,13 @@
   padding: 0;
 }
 
-.page-forum .item-list  ul{
+.page-forum .item-list  ul,
+.node-type-forum .item-list ul{
   margin-bottom: 0;
 }
 
-.page-forum .item-list li {
+.page-forum .item-list li,
+.node-type-forum .item-list li {
   list-style: none;
   margin-left: 0;
   padding: 10px 15px;
