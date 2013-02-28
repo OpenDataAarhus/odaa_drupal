@@ -1,0 +1,143 @@
+/*
+  ==============================================================================
+  ** Drupal specific styling
+  ==============================================================================
+*/
+@import "../vendor/bootstrap/less/mixins.less";
+@import "../vendor/bootstrap/less/variables.less";
+@import "mixins.less";
+@import "variables.less";
+@import "../vendor/bootstrap/less/buttons.less";
+@import "custom.less";
+
+
+/*
+  ------------------------------------------------------------------------------
+  ** Forum
+  ------------------------------------------------------------------------------
+*/
+.block-forum .module-content,
+.block-forum .module-content:last-child,
+.block-comment .module-content,
+.block-comment .module-content:last-child {
+  padding: 0;
+}
+
+.page-forum .item-list ul,
+.node-type-forum .item-list ul{
+  margin-bottom: 0;
+}
+
+.page-forum .item-list li,
+.node-type-forum .item-list li {
+  list-style: none;
+  margin-left: 0;
+  padding: 10px 15px;
+}
+
+.block-forum .more-link {
+  border-top: 1px solid #d0d0d0;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  text-align: right;
+}
+
+#forum .forum-table-superheader {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+#forum .forum-table-name {
+  margin: 0;
+}
+
+.table.table-bordered th {
+  border-bottom: 0;
+}
+
+#forum td {
+  padding: 10px;
+}
+
+#forum th.forum-icon {
+  width: 48px;
+}
+
+#forum-statistics div {
+  padding: 0;
+}
+
+#forum-statistics #forum-statistics-header {
+  font-weight: bold;
+}
+
+#forum-statistics #forum-statistics-statistics-header {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+
+/*
+  ------------------------------------------------------------------------------
+  ** Views
+  ------------------------------------------------------------------------------
+*/
+.views-exposed-form .views-exposed-widget .form-submit {  
+  .btn;
+  .btn-primary;
+  
+  margin-top: 38px;
+  padding: 5px 15px;
+}
+    
+    
+/*
+  ------------------------------------------------------------------------------
+  ** Tabs
+  ------------------------------------------------------------------------------
+*/
+.tabs.primary {
+  float: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 0;
+  width: auto;
+}
+
+.tabs.primary li {
+  background-color: #f3f3f3;
+  border: 1px solid #ccc;
+  list-style: none;
+  display: inline-block;
+  padding: 10px 15px;
+}
+
+.tabs.primary li:hover {
+  background-color: #e2e2e2;
+}
+
+.tabs.primary li.active {
+  background-color: #e2e2e2;
+  border: 1px solid #ccc;
+}
+
+
+/*
+  ------------------------------------------------------------------------------
+  ** Footer logo
+  ------------------------------------------------------------------------------
+*/
+.attribution .ckan-footer-logo {
+  float: left;
+  margin-top: 3px;
+  margin-right: 10px;
+}
+
+.drupal-footer-logo {
+  background: url("../img/drupal-footer-logo.png") no-repeat;
+  float: left;
+  height: 25px;
+  width: 104px;
+}
