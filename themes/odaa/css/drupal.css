@@ -29,11 +29,12 @@
   padding: 10px 15px;
 }
 
-.block-forum .module-content .more-link {
+.block-forum .more-link {
   border-top: 1px solid #d0d0d0;
   padding-top: 10px;
   padding-right: 10px;
   padding-bottom: 10px;
+  text-align: right;
 }
 
 #forum .forum-table-superheader {
