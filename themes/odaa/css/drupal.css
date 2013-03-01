@@ -774,11 +774,7 @@ input[type="submit"].btn.btn-mini {
   font-weight: bold;
   margin-top: 20px;
 }
-/*
-  ------------------------------------------------------------------------------
-  ** Views
-  ------------------------------------------------------------------------------
-*/
+#advanced-forum-forum-topic-list-sort-form input,
 .views-exposed-form .views-exposed-widget .form-submit {
   display: inline-block;
   *display: inline;
@@ -853,28 +849,40 @@ input[type="submit"].btn.btn-mini {
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  margin-top: 38px;
-  padding: 5px 15px;
+  padding: 5px 15px !important;
 }
+#advanced-forum-forum-topic-list-sort-form input:hover,
 .views-exposed-form .views-exposed-widget .form-submit:hover,
+#advanced-forum-forum-topic-list-sort-form input:active,
 .views-exposed-form .views-exposed-widget .form-submit:active,
+#advanced-forum-forum-topic-list-sort-form input.active,
 .views-exposed-form .views-exposed-widget .form-submit.active,
+#advanced-forum-forum-topic-list-sort-form input.disabled,
 .views-exposed-form .views-exposed-widget .form-submit.disabled,
+#advanced-forum-forum-topic-list-sort-form input[disabled],
 .views-exposed-form .views-exposed-widget .form-submit[disabled] {
   background-color: #eaeaea;
   *background-color: #dddddd;
 }
+#advanced-forum-forum-topic-list-sort-form input:active,
 .views-exposed-form .views-exposed-widget .form-submit:active,
+#advanced-forum-forum-topic-list-sort-form input.active,
 .views-exposed-form .views-exposed-widget .form-submit.active {
   background-color: #d1d1d1 \9;
 }
+#advanced-forum-forum-topic-list-sort-form input:first-child,
 .views-exposed-form .views-exposed-widget .form-submit:first-child {
   *margin-left: 0;
 }
+#advanced-forum-forum-topic-list-sort-form input:hover,
 .views-exposed-form .views-exposed-widget .form-submit:hover,
+#advanced-forum-forum-topic-list-sort-form input:active,
 .views-exposed-form .views-exposed-widget .form-submit:active,
+#advanced-forum-forum-topic-list-sort-form input.active,
 .views-exposed-form .views-exposed-widget .form-submit.active,
+#advanced-forum-forum-topic-list-sort-form input.disabled,
 .views-exposed-form .views-exposed-widget .form-submit.disabled,
+#advanced-forum-forum-topic-list-sort-form input[disabled],
 .views-exposed-form .views-exposed-widget .form-submit[disabled] {
   background-color: #eaeaea;
   *background-color: #dddddd;
@@ -885,26 +893,40 @@ input[type="submit"].btn.btn-mini {
   -o-transition: none;
   transition: none;
 }
+#advanced-forum-forum-topic-list-sort-form input:active,
 .views-exposed-form .views-exposed-widget .form-submit:active,
+#advanced-forum-forum-topic-list-sort-form input.active,
 .views-exposed-form .views-exposed-widget .form-submit.active {
   background-color: #d1d1d1 \9;
 }
+#advanced-forum-forum-topic-list-sort-form input:hover,
 .views-exposed-form .views-exposed-widget .form-submit:hover,
+#advanced-forum-forum-topic-list-sort-form input:active,
 .views-exposed-form .views-exposed-widget .form-submit:active,
+#advanced-forum-forum-topic-list-sort-form input.active,
 .views-exposed-form .views-exposed-widget .form-submit.active,
+#advanced-forum-forum-topic-list-sort-form input.disabled,
 .views-exposed-form .views-exposed-widget .form-submit.disabled,
+#advanced-forum-forum-topic-list-sort-form input[disabled],
 .views-exposed-form .views-exposed-widget .form-submit[disabled] {
   background-color: #d3754e;
   *background-color: #ce653a;
 }
+#advanced-forum-forum-topic-list-sort-form input:active,
 .views-exposed-form .views-exposed-widget .form-submit:active,
+#advanced-forum-forum-topic-list-sort-form input.active,
 .views-exposed-form .views-exposed-widget .form-submit.active {
   background-color: #bf592f \9;
 }
+#advanced-forum-forum-topic-list-sort-form input:hover,
 .views-exposed-form .views-exposed-widget .form-submit:hover,
+#advanced-forum-forum-topic-list-sort-form input:active,
 .views-exposed-form .views-exposed-widget .form-submit:active,
+#advanced-forum-forum-topic-list-sort-form input.active,
 .views-exposed-form .views-exposed-widget .form-submit.active,
+#advanced-forum-forum-topic-list-sort-form input.disabled,
 .views-exposed-form .views-exposed-widget .form-submit.disabled,
+#advanced-forum-forum-topic-list-sort-form input[disabled],
 .views-exposed-form .views-exposed-widget .form-submit[disabled] {
   background-color: #d3754e;
   *background-color: #ce653a;
@@ -915,9 +937,14 @@ input[type="submit"].btn.btn-mini {
   -o-transition: none;
   transition: none;
 }
+#advanced-forum-forum-topic-list-sort-form input:active,
 .views-exposed-form .views-exposed-widget .form-submit:active,
+#advanced-forum-forum-topic-list-sort-form input.active,
 .views-exposed-form .views-exposed-widget .form-submit.active {
   background-color: #bf592f \9;
+}
+.views-exposed-form .views-exposed-widget .form-submit {
+  margin-top: 38px;
 }
 /*
   ------------------------------------------------------------------------------
