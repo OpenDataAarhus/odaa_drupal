@@ -761,7 +761,8 @@ input[type="submit"].btn.btn-mini {
 #forum td {
   padding: 10px;
 }
-#forum th.forum-icon {
+#forum th.forum-icon,
+#forum th.views-field-topic-icon {
   width: 48px;
 }
 #forum-statistics div {
