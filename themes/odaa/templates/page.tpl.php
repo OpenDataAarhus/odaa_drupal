@@ -115,21 +115,21 @@
         <div class="module-content">
           <a id="main-content"></a>
           <?php print render($title_prefix); ?>
-          
+
           <?php if ($title): ?>
             <h1 class="title" id="page-title"><?php print $title; ?></h1>
           <?php endif; ?>
-          
+
           <?php print render($title_suffix); ?>
-          
+
           <?php print render($page['help']); ?>
-          
+
           <?php if ($action_links): ?>
             <ul class="action-links"><?php print render($action_links); ?></ul>
           <?php endif; ?>
-          
+
           <?php print render($page['content']); ?>
-          
+
           <?php print $feed_icons; ?>
         </div>
       </div>
@@ -146,6 +146,7 @@
 <footer class="site-footer">
   <div class="container">
     <?php print render($page['footer']); ?>
+    <a href="http://www.itaward.dk/default.asp?Id=320&cpc=1" class="hide-text award-smart-city-footer-logo">Nomineret Årets Smart City-pris 2013</a>
     <div class="attribution">
       <p><strong>Powered by</strong></p>
       <a href="http://ckan.org" class="hide-text ckan-footer-logo">CKAN</a>
