@@ -67,10 +67,10 @@ function remote_login_access($token) {
   $settings = variable_get('remote_login', FALSE);
   if ($settings) {
     $ips = explode(',', $settings['ips']);
-    if (in_array(ip_address(), $ips)) {
+//    if (in_array(ip_address(), $ips)) {
       if (_remote_login_token($settings['uid'], $settings['api_key']) === $token) {
         return TRUE;
-      }
+//      }
     }
   }
   return FALSE;
@@ -124,7 +124,7 @@ function remote_login_create_user() {
 
     // Get posted data.
     $username = _remote_login_token($_POST['uid'], $_POST['api_key']);
-    $full_name = check_plain($_POST['fullname']);
+    $fullname = check_plain($_POST['fullname']);
     $mail = $_POST['mail'];
 
     // Build user.
@@ -134,10 +134,10 @@ function remote_login_create_user() {
       'mail' => $mail,
       'status' => 1,
       'init' => 'email address',
-      'field_full_name' => array(
+      'field_fullname' => array(
         'und' => array(
           array(
-            'value' => $full_name,
+            'value' => $fullname,
           ),
         ),
       ),
