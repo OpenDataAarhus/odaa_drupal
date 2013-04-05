@@ -149,9 +149,17 @@
       <?php print render($page['footer']); ?>
     </div>
     <div class="footer-second">
-      <div class="attribution">      
-        <a class="hide-text made-with-aarhus-footer-logo" href="http://www.aarhus.dk/da/omkommunen/english.aspx">Made with Aarhus - Danish for progress</a> 
-        <a class="hide-text award-smart-city-footer-logo" href="http://www.itaward.dk/default.asp?Id=320&amp;cpc=1">Nomineret Årets Smart City-pris 2013</a>
+      <div class="attribution attribution-first">      
+        <a href="http://www.smartaarhus.dk/" class="hide-text made-with-aarhus-footer-logo">Made with Aarhus - Danish for progress</a> 
+        <a href="http://www.itaward.dk/default.asp?Id=320&amp;cpc=1" class="hide-text award-smart-city-footer-logo">Nomineret Årets Smart City-pris 2013</a>
+      </div>
+      <div class="attribution attribution-second">
+        <div style="float:right;">
+        <p style="text-align:right;"><strong>Powered by</strong></p>
+          <a href="http://ckan.org" class="hide-text ckan-footer-logo">CKAN</a>
+          <a class="hide-text drupal-footer-logo" href="http://drupal.org">Drupal</a>
+        </div>
+        <div class="clearfix"></div>    
       </div>
     </div>
   </div>

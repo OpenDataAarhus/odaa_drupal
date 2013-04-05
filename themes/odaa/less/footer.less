@@ -15,20 +15,54 @@
   color: @footerLinkColor;
 }
 
-.footer-links,
 .attribution {
+  margin: 0;
+}
+
+.attribution,
+.footer-first,
+.footer-second {
   .makeColumn(6);
 }
 
+.attribution,
+.footer-first {
+  margin-left: 0;
+}
+
+.attribution {
+  margin-bottom: 20px;
+}
+
+.attribution-second {
+  margin-top: 20px;
+}
+
 .footer-links {
+  .makeColumn(2);
   margin-left: 0;
 }
 
 .footer-links li {
-  display: inline-block;
+  display: block;
   width: 40%;
   margin-right: 5%;
   margin-bottom: 5px;
+}
+
+.award-smart-city-footer-logo {
+  background: url("/sites/odaa.dk/themes/odaa/img/it-award-smartcity-2013.png") no-repeat;
+  float: right;
+  height: 57px;
+  width: 267px;
+}
+
+.made-with-aarhus-footer-logo {
+  background: url("/sites/odaa.dk/themes/odaa/img/made_with_aarhus_logo.png") no-repeat scroll 0 0 transparent;
+  float: right;
+  margin-left: 30px;
+  height: 100px;
+  width: 136px;
 }
 
 .attribution small {
@@ -71,6 +105,24 @@
 
 .lang-dropdown li {
   width: auto;
+}
+
+/*
+  ------------------------------------------------------------------------------
+  ** Mailchimp
+  ------------------------------------------------------------------------------
+*/
+
+#mc_embed_signup {
+  .makeColumn(4);
+  
+  h2 {
+    font-size: 1.5em;
+  }
+
+  .button {
+    margin-left: 5px;
+  }
 }
 
 // Apply flags to the items in browsers that support :before
