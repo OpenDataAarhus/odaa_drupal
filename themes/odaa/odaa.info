@@ -11,6 +11,8 @@ stylesheets[all][] = /less/css/main.css
 stylesheets[all][] = /css/drupal.css
 stylesheets[all][] = /css/custom.css
 
+scripts[] = scripts/html5shiv.js
+
 regions[header] = Header
 regions[sidebar] = Sidebar first
 regions[content] = Content
